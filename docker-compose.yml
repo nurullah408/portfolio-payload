@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: portfolio_postgres
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=portfolio
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d portfolio"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    volumes:
+      - data:/data/db
+    logging:
+      driver: none
+
+  payload:
+    image: node:18-alpine
+    container_name: portfolio_payload
+    profiles: [dev]
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    environment:
+      PNPM_CONFIG_MINIMUM_RELEASE_AGE: '0'
+      NEXT_NO_TURBOPACK: '1'
+    volumes:
+      - .:/app
+      - /app/node_modules # anonymous volume prevents host node_modules from leaking in
+    working_dir: /app/
+    command: sh -c "pnpm install && pnpm dev"
+    depends_on:
+      - postgres
+
+volumes:
+  data:
+  node_modules:
