@@ -1,0 +1,38 @@
+:root {
+  /* ========================================
+     Duration
+     ======================================== */
+
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 800ms;
+  --duration-cinematic: 1200ms;
+
+  /* ========================================
+     Easing
+     ======================================== */
+
+  --ease-linear: linear;
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ========================================
+     Transition Presets
+     ======================================== */
+
+  --transition-fast: all var(--duration-fast) var(--ease-standard);
+
+  --transition-normal: all var(--duration-normal) var(--ease-standard);
+
+  --transition-slow: all var(--duration-slow) var(--ease-standard);
+
+  --transition-cinematic: all var(--duration-cinematic) var(--ease-cinematic);
+}

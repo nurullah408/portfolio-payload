@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Alumni Sans';
+  src: url('/fonts/alumni-sans/regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alumni Sans';
+  src: url('/fonts/alumni-sans/bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/sora/regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/sora/medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/sora/semi-bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/sora/bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Font Families */
+  --font-display: 'Alumni Sans', sans-serif;
+  --font-sans: 'Sora', sans-serif;
+
+  /* Font Weights */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Display */
+
+  --text-display: clamp(4rem, 10vw, 7rem);
+  --text-display-line-height: 0.9;
+  --text-display-letter-spacing: -0.02em;
+
+  --text-h1: clamp(3rem, 7vw, 4.5rem);
+  --text-h1-line-height: 0.95;
+  --text-h1-letter-spacing: -0.02em;
+
+  --text-h2: clamp(2.5rem, 5vw, 3.5rem);
+  --text-h2-line-height: 1;
+  --text-h2-letter-spacing: -0.015em;
+
+  --text-h3: clamp(2rem, 3.5vw, 2.5rem);
+  --text-h3-line-height: 1.05;
+  --text-h3-letter-spacing: -0.01em;
+
+  --text-h4: 2rem;
+  --text-h4-line-height: 1.1;
+  --text-h4-letter-spacing: 0;
+
+  --text-large: 1.25rem;
+  --text-large-line-height: 1.6;
+
+  --text-body: 1rem;
+  --text-body-line-height: 1.6;
+
+  --text-small: 0.875rem;
+  --text-small-line-height: 1.5;
+
+  --text-label: 0.75rem;
+  --text-label-line-height: 1.4;
+  --text-label-letter-spacing: 0.08em;
+}
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+
+  --font-weight-regular: var(--font-weight-regular);
+  --font-weight-medium: var(--font-weight-medium);
+  --font-weight-semibold: var(--font-weight-semibold);
+  --font-weight-bold: var(--font-weight-bold);
+}
