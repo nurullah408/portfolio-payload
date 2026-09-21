@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   postgres:
     image: postgres:latest
@@ -23,7 +21,7 @@ services:
       driver: none
 
   payload:
-    image: node:18-alpine
+    image: node:22-alpine
     container_name: portfolio_payload
     profiles: [dev]
     ports:
@@ -37,9 +35,10 @@ services:
       - .:/app
       - /app/node_modules # anonymous volume prevents host node_modules from leaking in
     working_dir: /app/
-    command: sh -c "pnpm install && pnpm dev"
+    command: sh -c "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm dev"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
 
 volumes:
   data:
