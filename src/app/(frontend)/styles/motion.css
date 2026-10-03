@@ -36,3 +36,22 @@
 
   --transition-cinematic: all var(--duration-cinematic) var(--ease-cinematic);
 }
+
+/*character animation*/
+@keyframes character-reveal {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hero-character {
+  overflow: hidden;
+}
+
+.hero-character h1 {
+  font-size: 84px;
+  animation: character-reveal calc(var(--duration-normal) * 3) var(--ease-standard) both;
+}
