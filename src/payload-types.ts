@@ -1677,6 +1677,7 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
+  Content?: ContentBlock[] | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1721,6 +1722,11 @@ export interface FooterSelect<T extends boolean = true> {
               label?: T;
             };
         id?: T;
+      };
+  Content?:
+    | T
+    | {
+        content?: T | ContentBlockSelect<T>;
       };
   updatedAt?: T;
   createdAt?: T;

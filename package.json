@@ -9,6 +9,8 @@
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
     "docker:dev:up": "docker compose -f docker-compose.yml --profile dev up",
     "docker:dev:down": "docker compose -f docker-compose.yml --profile dev down",
+    "docker:database:up": "docker compose -f docker-compose.yml --profile database up",
+    "docker:database:down": "docker compose -f docker-compose.yml --profile database down",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",

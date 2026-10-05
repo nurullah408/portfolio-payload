@@ -2,6 +2,7 @@ import type { GlobalConfig } from 'payload'
 
 import { link } from '@/fields/link'
 import { revalidateFooter } from './hooks/revalidateFooter'
+import { Content } from '@/blocks/Content/config'
 
 export const Footer: GlobalConfig = {
   slug: 'footer',
@@ -24,6 +25,11 @@ export const Footer: GlobalConfig = {
           RowLabel: '@/Footer/RowLabel#RowLabel',
         },
       },
+    },
+    {
+      name: 'Content',
+      type: 'blocks',
+      blocks: [Content],
     },
   ],
   hooks: {
